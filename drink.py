@@ -1,6 +1,6 @@
 # this does file i/o
 import pickle
-# ?
+# sys is for stdin
 import sys
 
 # this is a hash lookup table where the key is the first of these two elements
@@ -45,21 +45,21 @@ def find_ingredient(ingredient):
     if (ingredient == ""):
         print ("I can tell you're bored.")
         exit # how the hell do I stop the program?
-    print("Here are all the ones containing", ingredient)
+    print "Here are all the ones containing", ingredient
     for drink,recipe in recipes2.items(): # this iterator returns key,value pairs
         if recipe.find(ingredient) != -1: # returns byte index of substring
-            print()
+            print
             print(drink)
             print(recipe)
 
 # print()
 # find_ingredient("vodka")
 
-print()
+print
 print("Look for an ingredient: ")
 
 thingy = sys.stdin.readline()
 thingy = thingy.strip() # take the newline off
 find_ingredient(thingy)
 
-print()
+print
